@@ -28,7 +28,7 @@ module Rack
 
     def cassettes
       Dir["#{VCR::Config.cassette_library_dir}/**/*.yml"].map do |f| 
-        f.match(/^#{Regexp.escape(VCR::Config.cassette_library_dir)}\/(.+)\.yml/)[1]
+        f.match(/^#{Regexp.escape(VCR::Config.cassette_library_dir.to_s)}\/(.+)\.yml/)[1]
       end
     end
 
